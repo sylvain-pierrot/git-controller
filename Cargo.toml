@@ -1,6 +1,6 @@
 [workspace]
 
 members = [
-    "gitstake",
-    "gitsprout",
+    "git-auth-layer",
+    "git-repo-manager"
 ]

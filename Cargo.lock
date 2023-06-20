@@ -205,7 +205,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "gitsprout"
+name = "git-auth-layer"
+version = "0.1.0"
+
+[[package]]
+name = "git-repo-manager"
 version = "0.1.0"
 dependencies = [
  "dotenv",
@@ -214,10 +218,6 @@ dependencies = [
  "tokio",
  "tonic",
 ]
-
-[[package]]
-name = "gitstake"
-version = "0.1.0"
 
 [[package]]
 name = "h2"

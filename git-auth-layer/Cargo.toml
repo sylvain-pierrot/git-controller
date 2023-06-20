@@ -1,5 +1,5 @@
 [package]
-name = "gitstake"
+name = "git-auth-layer"
 version = "0.1.0"
 edition = "2021"
 
