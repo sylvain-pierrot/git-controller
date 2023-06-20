@@ -1,0 +1,38 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    networks:
+      gitstake:
+        aliases:
+          - "server-git"
+    volumes:
+      - ./target/x86_64-unknown-linux-musl/debug:/app
+      - ../fuse-authorized_keys/target/x86_64-unknown-linux-musl/debug:/fuse
+
+  client-a:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+      args:
+        CLIENT: a
+    networks:
+      - gitstake
+    stdin_open: true
+    tty: true
+
+  client-b:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+      args:
+        CLIENT: b
+    networks:
+      - gitstake
+    stdin_open: true
+    tty: true
+
+networks:
+  gitstake:
+    driver: bridge
