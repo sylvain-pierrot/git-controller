@@ -2,5 +2,6 @@
 
 members = [
     "git-auth-layer",
-    "git-repo-manager"
+    "git-repo-manager",
+    "ssh-keys-fuse"
 ]
