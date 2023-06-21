@@ -1,13 +1,13 @@
 mod service;
 
 use dotenv::dotenv;
-use paastech_proto::gitsprout::git_sprout_server::GitSproutServer;
-use service::{GitSproutService, GitSproutServiceConfig};
+use paastech_proto::gitrepomanager::git_repo_manager_server::GitRepoManagerServer;
+use service::{GitRepoManagerService, GitRepoManagerServiceConfig};
 use tonic::transport::Server;
 
-fn load_env_into_config() -> GitSproutServiceConfig {
+fn load_env_into_config() -> GitRepoManagerServiceConfig {
     let git_repository_base_path_key = "GITSPROUT_GIT_REPOSITORY_BASE_PATH";
-    GitSproutServiceConfig {
+    GitRepoManagerServiceConfig {
         git_repository_base_path: std::env::var(git_repository_base_path_key).unwrap(),
     }
 }
@@ -20,12 +20,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let gitsprout_config = load_env_into_config();
 
-    let gitsprout_service = GitSproutService {
+    let gitsprout_service = GitRepoManagerService {
         config: gitsprout_config,
     };
 
     Server::builder()
-        .add_service(GitSproutServer::new(gitsprout_service))
+        .add_service(GitRepoManagerServer::new(gitsprout_service))
         .serve(addr)
         .await?;
 

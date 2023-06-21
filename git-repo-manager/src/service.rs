@@ -1,24 +1,24 @@
 use std::fs;
 use std::process::Command;
 
-use paastech_proto::gitsprout::git_sprout_server::GitSprout;
-use paastech_proto::gitsprout::{RepositoryRequest, RepositoryResponse};
+use paastech_proto::gitrepomanager::git_repo_manager_server::GitRepoManager;
+use paastech_proto::gitrepomanager::{RepositoryRequest, RepositoryResponse};
 use tonic::{Request, Response, Status};
 
 #[derive(Debug, Default)]
-pub struct GitSproutServiceConfig {
+pub struct GitRepoManagerServiceConfig {
     pub git_repository_base_path: String,
 }
 
 #[derive(Debug, Default)]
-pub struct GitSproutService {
-    pub config: GitSproutServiceConfig,
+pub struct GitRepoManagerService {
+    pub config: GitRepoManagerServiceConfig,
 }
 
 type GitSproutResult<T> = Result<Response<T>, Status>;
 
 #[tonic::async_trait]
-impl GitSprout for GitSproutService {
+impl GitRepoManager for GitRepoManagerService {
     async fn create_repository(
         &self,
         request: Request<RepositoryRequest>,
@@ -46,9 +46,7 @@ impl GitSprout for GitSproutService {
             .output()
             .is_err()
         {
-            return Err(Status::unknown(
-                "Unknown error occured : Failed initializing repository",
-            ));
+            return Err(Status::unknown("Failed initializing repository"));
         }
 
         let reply = RepositoryResponse {
@@ -60,8 +58,28 @@ impl GitSprout for GitSproutService {
 
     async fn delete_repository(
         &self,
-        _: Request<RepositoryRequest>,
-    ) -> Result<Response<RepositoryRequest>, Status> {
-        Err(Status::unimplemented(""))
+        request: Request<RepositoryRequest>,
+    ) -> Result<Response<RepositoryResponse>, Status> {
+        let request_data = request.into_inner();
+
+        let full_repo_path = format!(
+            "{}/{}",
+            self.config.git_repository_base_path.clone(),
+            request_data.repository_path
+        );
+
+        if let Err(_) = fs::metadata(full_repo_path.clone()) {
+            return Err(Status::not_found(""));
+        }
+
+        if let Err(_) = fs::remove_dir_all(full_repo_path) {
+            return Err(Status::unknown("Failed removing repository"));
+        }
+
+        let reply = RepositoryResponse {
+            message: "".to_owned(),
+        };
+
+        Ok(Response::new(reply))
     }
 }

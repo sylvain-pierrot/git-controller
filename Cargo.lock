@@ -458,7 +458,7 @@ checksum = "dd8b5dd2ae5ed71462c540258bedcb51965123ad7e7ccf4b9a8cafaa4a63576d"
 [[package]]
 name = "paastech-proto"
 version = "0.1.0"
-source = "git+https://github.com/paastech-cloud/proto.git?rev=48a1ca6#48a1ca611ce1819a7a91b8dc498b4c4267f85640"
+source = "git+https://github.com/paastech-cloud/proto.git?rev=1520c877f55a6c885e75ee59024c19597b1030a2#1520c877f55a6c885e75ee59024c19597b1030a2"
 dependencies = [
  "prost",
  "tonic",
