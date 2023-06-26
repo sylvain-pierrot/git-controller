@@ -1,0 +1,12 @@
+/home/pierrots/git/do/git-controller/git/target/debug/deps/users-dd5c8e7c842c8ee5.rmeta: /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/lib.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/base.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/cache.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/mock.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/switch.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/traits.rs
+
+/home/pierrots/git/do/git-controller/git/target/debug/deps/libusers-dd5c8e7c842c8ee5.rlib: /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/lib.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/base.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/cache.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/mock.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/switch.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/traits.rs
+
+/home/pierrots/git/do/git-controller/git/target/debug/deps/users-dd5c8e7c842c8ee5.d: /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/lib.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/base.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/cache.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/mock.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/switch.rs /home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/traits.rs
+
+/home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/lib.rs:
+/home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/base.rs:
+/home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/cache.rs:
+/home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/mock.rs:
+/home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/switch.rs:
+/home/pierrots/.cargo/registry/src/github.com-1ecc6299db9ec823/users-0.11.0/src/traits.rs:
