@@ -4,6 +4,15 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1280px-Git-logo.svg.png" alt="git" width=300 />
 </p>
 
+## Dependencies
+
+```
+sudo apt update && sudo apt upgrade -y
+# sudo apt install -y protobuf-compiler libp
+sudo apt-get install fuse3
+sudo apt-get install libfuse-dev pkg-config
+```
+
 ## Getting Started
 
 To run Git Controller locally, follow these steps:
@@ -25,7 +34,7 @@ cd git-controller
 4. Build and start the Docker containers.
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 ## Usage
