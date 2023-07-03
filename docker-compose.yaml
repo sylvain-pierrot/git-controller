@@ -7,28 +7,42 @@ services:
       - POSTGRES_PASSWORD=paastech
       - POSTGRES_DB=paastech
     ports:
-      - "5432:5432"
+      - "5432"
     volumes:
       - "data_db:/var/lib/postgresql/data"
       - "./database:/docker-entrypoint-initdb.d"
 
-  git:
+  fuse:
     build:
-      context: git
+      context: ssh-keys-fuse
+      target: runner
     restart: always
-    ports:
-    - 22
-    volumes:
-      - "data_git:/srv"
+    env_file:
+    - ssh-keys-fuse/.env
+    cap_add:
+    - SYS_ADMIN
+    devices:
+    - /dev/fuse
+    security_opt:
+    - apparmor:unconfined
 
-  client:
-    build:
-      context: client
-    restart: always
-    stdin_open: true
-    tty: true
+  # git:
+  #   build:
+  #     context: git
+  #   restart: always
+  #   ports:
+  #   - 22
+  #   volumes:
+  #     - "data_git:/srv"
+
+  # client:
+  #   build:
+  #     context: client
+  #   restart: always
+  #   stdin_open: true
+  #   tty: true
 
 
 volumes:
   data_db:
-  data_git:
+  # data_git:

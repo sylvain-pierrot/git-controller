@@ -13,6 +13,12 @@ sudo apt-get install fuse3
 sudo apt-get install libfuse-dev pkg-config
 ```
 
+## :warning: Warning: to unmount the folder
+
+```bash
+umount <PATH_TO_DIR>
+```
+
 ## Getting Started
 
 To run Git Controller locally, follow these steps:

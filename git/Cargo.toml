@@ -1,7 +1,0 @@
-[workspace]
-
-members = [
-    "git-auth-layer",
-    "git-repo-manager",
-    "ssh-keys-fuse"
-]
