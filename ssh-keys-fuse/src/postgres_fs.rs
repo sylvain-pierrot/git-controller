@@ -41,7 +41,7 @@ const DOT_SSH_DIR_ATTR: FileAttr = FileAttr {
 
 const AUTHORIZED_KEYS_ATTR: FileAttr = FileAttr {
     ino: 2,
-    size: 50,
+    size: 13,
     blocks: 1,
     atime: UNIX_EPOCH,
     mtime: UNIX_EPOCH,
@@ -142,12 +142,12 @@ impl PostgresFS {
 
         let mut result_string = String::new();
         println!("{:?}", result);
-
-        for row in result {
+        
+        for row in result.iter() {
             let row_string = format!("{} {}\n", row.user_id, row.value); // Convert tuple to string
             result_string.push_str(&row_string);
         }
-
+        println!("{}", result_string);
         Ok(result_string)
     }
 

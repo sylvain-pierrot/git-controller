@@ -17,9 +17,9 @@ RUN useradd -ms /bin/bash newuser
 USER newuser
 WORKDIR /home/newuser
 
-COPY --from=builder ./target/release/ssh-keys-fuse .
+COPY --from=builder ./target/release/ssh-keys-fuse /usr/local/bin
 COPY fuse.conf /etc/fuse.conf
 
 RUN mkdir /home/newuser/.ssh
 
-CMD ["./ssh-keys-fuse"]
+CMD ["ssh-keys-fuse"]

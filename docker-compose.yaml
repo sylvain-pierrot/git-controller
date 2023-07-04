@@ -3,14 +3,14 @@ services:
     image: postgres:15
     restart: always
     environment:
-      - POSTGRES_USER=paastech
-      - POSTGRES_PASSWORD=paastech
-      - POSTGRES_DB=paastech
+    - POSTGRES_USER=paastech
+    - POSTGRES_PASSWORD=paastech
+    - POSTGRES_DB=paastech
     ports:
-      - "5432"
+    - "5432"
     volumes:
-      - "data_db:/var/lib/postgresql/data"
-      - "./database:/docker-entrypoint-initdb.d"
+    - "data_db:/var/lib/postgresql/data"
+    - "./database:/docker-entrypoint-initdb.d"
 
   fuse:
     build:
@@ -25,6 +25,8 @@ services:
     - /dev/fuse
     security_opt:
     - apparmor:unconfined
+    depends_on:
+    - postgres
 
   # git:
   #   build:
