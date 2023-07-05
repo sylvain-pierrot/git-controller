@@ -12,6 +12,7 @@ VALUES ('user1', 'key1'),
        ('user2', 'key2'),
        ('user3', 'key3');
 
+
 -- --
 -- -- PostgreSQL database dump
 -- --
