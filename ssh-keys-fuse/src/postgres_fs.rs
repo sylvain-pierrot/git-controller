@@ -9,7 +9,6 @@ use sqlx::{Error, Pool, Postgres};
 use std::ffi::{OsStr, OsString};
 use std::time::{Duration, UNIX_EPOCH};
 
-
 // Constants
 //
 const TTL: Duration = Duration::from_secs(1); // 1 second
@@ -30,7 +29,6 @@ const DOT_SSH_DIR_ATTR: FileAttr = FileAttr {
     flags: 0,
 };
 
-
 // Struct `SSHKey` and `PostgresFS`
 //
 #[derive(FromRow, Debug)]
@@ -43,7 +41,6 @@ pub struct PostgresFS {
     // git_auth_binary_path: String,
     connection: Pool<Postgres>,
 }
-
 
 // PostgresFS implementation
 //
@@ -60,7 +57,7 @@ impl PostgresFS {
 
     async fn get_authorized_keys_attr(&self) -> FileAttr {
         let authorized_keys_length = self.get_length_authorized_keys().await.unwrap();
-    
+
         FileAttr {
             ino: 2,
             size: authorized_keys_length as u64,
@@ -117,7 +114,6 @@ impl PostgresFS {
         println!("Successfully postgresFS mounted.")
     }
 }
-
 
 // filesystem (fuse) implementation for PostgresFS
 //
@@ -188,4 +184,3 @@ impl Filesystem for PostgresFS {
         reply.ok();
     }
 }
-
